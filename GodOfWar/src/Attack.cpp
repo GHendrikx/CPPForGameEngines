@@ -10,3 +10,7 @@ void Attack::_register_methods(){}
 
 void Attack::_init(){}
 
+void Attack::_ready(){
+    //GameManager::player->attack = this;
+}
+

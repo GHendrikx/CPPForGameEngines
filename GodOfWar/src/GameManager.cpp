@@ -26,5 +26,4 @@ void GameManager::_process(){
 }
 void GameManager::_register_methods(){
     register_method("_process", &GameManager::_process);
-
 }

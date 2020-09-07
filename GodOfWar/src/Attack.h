@@ -14,6 +14,7 @@ namespace godot{
         Attack();
         ~Attack();
         void _init();
+        void _ready();
         bool attack;
     };
 

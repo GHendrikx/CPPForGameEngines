@@ -1,4 +1,6 @@
 #include "Player.h"
+#include <Input.hpp>
+#include <Position3D.hpp>
 
 using namespace godot;
 
@@ -11,39 +13,39 @@ Player::~Player(){}
  }
 
 void Player::_process(float delta){
-    
  }
 
 void Player::_rotate(float degrees)
 {
-    Godot::print(get_rotation_degrees().x);
     //making the rotation vector.
-    // Vector3 rotation = Vector3(get_rotation_degrees().x
-    // , get_rotation_degrees().y - degrees * speed, 
-    // get_rotation_degrees().z);
+    Vector3 rotation = Vector3(get_rotation_degrees().x
+    , get_rotation_degrees().y - degrees * speed, 
+    get_rotation_degrees().z);
 
-    //set_rotation_degrees(rotation);
-    // Godot::print(get_rotation_degrees());
+    set_rotation_degrees(rotation);
 }
 
 void Player::_ready(){
-    GameManager::player = this;
 }
 
 void Player::_init()
 {
-    Godot::print("Player");
-    //Player::shield = load("res://Scenes/Schield.tscn").instance();
+    GameManager::player = this;
 }
 
 void Player::_attack()
 {
-    //Shoot particle
     Godot::print("Attack");
 }
 void Player::_defend()
 {
-    // defend instantiating shield
-    Godot::print("defend");
+    Godot::print("Defend"); 
+    Spatial* spatial = NULL;
+    spatial = static_cast<Spatial*>(get_node("Shield"));
+
+    if(spatial == NULL)
+        Godot::print("NULL");
+    else
+        spatial->show();
 }
 
