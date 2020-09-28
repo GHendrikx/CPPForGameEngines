@@ -8,22 +8,26 @@ Creating the highscore for the highscore manager.
 
 using namespace godot;
 
-GameManager* GameManager::instance;
-Player* GameManager::player;
+EntityManager *GameManager::entitymanager;
+GameManager *GameManager::instance;
+Player *GameManager::player;
 
-void GameManager::_init(){
+void GameManager::_init()
+{
     GameManager::instance = this;
 }
 
-GameManager::GameManager(){
+GameManager::GameManager()
+{
 }
 
-GameManager::~GameManager(){
-
+GameManager::~GameManager()
+{
 }
-void GameManager::_process(){
-
+void GameManager::_process()
+{
 }
-void GameManager::_register_methods(){
+void GameManager::_register_methods()
+{
     register_method("_process", &GameManager::_process);
 }

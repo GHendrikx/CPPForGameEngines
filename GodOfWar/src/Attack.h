@@ -2,7 +2,9 @@
 #define ATTACK_H
 
 #include <Godot.hpp>
-#include <KinematicBody.hpp>
+#include <KinematicCollision.hpp>
+#include <Kinematicbody.hpp>
+#include "GameManager.h"
 
 namespace godot{
 
@@ -16,6 +18,8 @@ namespace godot{
         void _init();
         void _ready();
         bool attack;
+        void _shootRay();
+        void process();
     };
 
 }

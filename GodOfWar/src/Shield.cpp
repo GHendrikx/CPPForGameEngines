@@ -15,7 +15,6 @@ void Shield::_init()
 {
 }
 
-
 void Shield::_ready(){
     GameManager::player->shield = this;
 }

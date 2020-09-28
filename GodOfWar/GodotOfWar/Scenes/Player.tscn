@@ -1,32 +1,34 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=6 format=2]
 
-[ext_resource path="res://bin/GameManager.gdns" type="Script" id=1]
 [ext_resource path="res://bin/Player.gdns" type="Script" id=2]
-[ext_resource path="res://bin/InputManager.gdns" type="Script" id=3]
 [ext_resource path="res://Scenes/Shield.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Scenes/Attack.tscn" type="PackedScene" id=5]
 
 [sub_resource type="CubeMesh" id=1]
 
-[sub_resource type="CapsuleMesh" id=2]
+[sub_resource type="BoxShape" id=2]
 
 [node name="root" type="Spatial"]
-script = ExtResource( 1 )
 
 [node name="Player" type="CSGMesh" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0362108, -0.0407677, 0.0566583 )
 mesh = SubResource( 1 )
 script = ExtResource( 2 )
-Speed = 1.0
+Speed = 0.5
 
 [node name="Camera" type="Camera" parent="Player"]
-transform = Transform( 1, 0, 0, 0, 0.991925, 0.126822, 0, -0.126822, 0.991925, 0, 1.70225, 2.64236 )
+transform = Transform( 1, 0, 0, 0, 0.925256, 0.379343, 0, -0.379343, 0.925256, 0, 3.43213, 4.57013 )
+
+[node name="Attack" parent="Player" instance=ExtResource( 5 )]
+transform = Transform( -1.62921e-07, 0, 1, 0, 1, 0, -1, 0, -1.62921e-07, 0, 0, -3.55 )
+visible = false
 
 [node name="Shield" parent="Player" instance=ExtResource( 4 )]
 transform = Transform( -3, 0, -8.69354e-05, 0, 3, 0, 0.000260806, 0, -1, 0, 0, -2.58918 )
 visible = false
 
-[node name="CSGMesh2" type="CSGMesh" parent="."]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -4.46523 )
-mesh = SubResource( 2 )
+[node name="RigidBody" type="RigidBody" parent="Player"]
 
-[node name="InputManager" type="Node" parent="."]
-script = ExtResource( 3 )
+[node name="CollisionShape" type="CollisionShape" parent="Player/RigidBody"]
+shape = SubResource( 2 )
+[connection signal="body_entered" from="Player/RigidBody" to="Player" method="_on_Player_body_entered"]

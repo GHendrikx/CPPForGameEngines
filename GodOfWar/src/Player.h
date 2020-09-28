@@ -9,6 +9,8 @@
 #include "GameManager.h"
 #include <Node.hpp>
 #include <Spatial.hpp>
+#include <Input.hpp>
+#include <Position3D.hpp>
 
 namespace godot
 {
@@ -17,7 +19,7 @@ class Shield;
 class Attack;
     class Player : public MeshInstance
     {
-    GODOT_CLASS(Player,Spatial);
+    GODOT_CLASS(Player,MeshInstance);
 
     public:
         Player();
@@ -29,12 +31,17 @@ class Attack;
 
         //rotate the mesh
         void _rotate(float degrees);
-        void _attack();
-        void _defend();
+        void _attack(bool active);
+        void _defend(bool active);
+        void _on_Player_body_entered(PhysicsBody* body);
         Attack* attack;
         Shield* shield;
         private:
             float speed;
+            bool shieldActive;
+            bool swordActive;
+            float hp = 3;
+            bool initializeSpawnPositions = false;
     };
 }
 #endif /*PLAYER_H*/
