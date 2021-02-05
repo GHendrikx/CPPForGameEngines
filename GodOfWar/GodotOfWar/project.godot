@@ -64,6 +64,11 @@ defend={
  ]
 }
 
+[layer_names]
+
+3d_physics/layer_1="Player"
+3d_physics/layer_2="Enemy"
+
 [rendering]
 
 environment/default_environment="res://default_env.tres"

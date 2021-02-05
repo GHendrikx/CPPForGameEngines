@@ -7,10 +7,13 @@
 #include <Spatial.hpp>
 #include <string>
 #include <PackedScene.hpp>
+#include <Resource.hpp>
+#include <ResourceLoader.hpp>
 
 // Default vs libs
 #include <iostream>
 #include <vector>
+#include <cstdlib>
 
 namespace godot
 {
@@ -28,14 +31,10 @@ namespace godot
         void _add_entity();
         void _remove_entity();
         void _search_spawn_positions();
-        enum Entity_Type
-        {
-            SHOOTER,
-            WALKER
-        };
+        void _on_Timer_timeout();
 
     private:
-        Ref<PackedScene> EnemyScene;
+        Ref<PackedScene> entityScene;
         std::vector<Spatial *> spawnPositions;
     };
 } // namespace godot

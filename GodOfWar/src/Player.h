@@ -28,19 +28,20 @@ class Attack;
         void _ready();
         void _process(float delta);
         static void _register_methods();
+        void hit();
 
         //rotate the mesh
         void _rotate(float degrees);
         void _attack(bool active);
         void _defend(bool active);
-        void _on_Player_body_entered(PhysicsBody* body);
         Attack* attack;
         Shield* shield;
+
         private:
+            int hp = 3;
             float speed;
             bool shieldActive;
             bool swordActive;
-            float hp = 3;
             bool initializeSpawnPositions = false;
     };
 }

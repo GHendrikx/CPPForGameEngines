@@ -12,16 +12,17 @@
 
 [node name="Player" type="CSGMesh" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0362108, -0.0407677, 0.0566583 )
+layers = 2147483649
+use_collision = true
 mesh = SubResource( 1 )
 script = ExtResource( 2 )
-Speed = 0.5
+Speed = 0.4
 
 [node name="Camera" type="Camera" parent="Player"]
 transform = Transform( 1, 0, 0, 0, 0.925256, 0.379343, 0, -0.379343, 0.925256, 0, 3.43213, 4.57013 )
 
 [node name="Attack" parent="Player" instance=ExtResource( 5 )]
 transform = Transform( -1.62921e-07, 0, 1, 0, 1, 0, -1, 0, -1.62921e-07, 0, 0, -3.55 )
-visible = false
 
 [node name="Shield" parent="Player" instance=ExtResource( 4 )]
 transform = Transform( -3, 0, -8.69354e-05, 0, 3, 0, 0.000260806, 0, -1, 0, 0, -2.58918 )
@@ -31,4 +32,3 @@ visible = false
 
 [node name="CollisionShape" type="CollisionShape" parent="Player/RigidBody"]
 shape = SubResource( 2 )
-[connection signal="body_entered" from="Player/RigidBody" to="Player" method="_on_Player_body_entered"]

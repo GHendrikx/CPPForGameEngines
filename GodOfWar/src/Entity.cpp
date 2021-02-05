@@ -2,36 +2,37 @@
 
 using namespace godot;
 
-Entity::Entity(){}
-Entity::~Entity(){}
+Entity::Entity() {}
 
-void Entity::_register_methods(){
-    register_method((char*)"_on_Entity_body_entered", &Entity::_on_Entity_body_entered);
+Entity::~Entity() {}
+
+void Entity::_register_methods() {
+    register_method("_on_RigidBody_body_entered", &Entity::_on_RigidBody_body_entered);
     register_method("_process", &Entity::_process);
+    register_property("moveSpeed", &Entity::moveSpeed, 10.0f);
 }
 
-void Entity::_init(){}
-
-void Entity::_set_entity_type(int i){
-    Entity::type = (EntityManager::Entity_Type)i;
+void Entity::_init() {
+//    Vector3 rotation(90,90,0);
 }
 
-void Entity::_ready(){
+void Entity::_set_entity_type(int i) {
 }
 
-void Entity::_process(float delta){
-    if(Entity::type != NULL){
-        switch(Entity::type){
-            case EntityManager::Entity_Type::SHOOTER:
-            break;
-
-            case EntityManager::Entity_Type::WALKER:
-            break;
-        }
-    }
+void Entity::_ready() {
 }
 
-void Entity::_on_Entity_body_entered(PhysicsBody* body){
-    Godot::print("hide");
+void Entity::_process(float delta) {
+//    Vector3 direction = Vector3(get_translation().x, get_translation().y, get_translation().z + delta * moveSpeed);
+//    move_and_slide(Vector3(get_translation().x, get_translation().y, get_translation().z + delta * moveSpeed));
+    set_translation(Vector3(get_translation().x, get_translation().y, get_translation().z + delta * moveSpeed));
+}
+
+void Entity::_on_RigidBody_body_entered(PhysicsBody *body) {
+    if (Entity::hit)
+        return;
+
+    Entity::hit = true;
+    GameManager::player->hit();
     hide();
 }

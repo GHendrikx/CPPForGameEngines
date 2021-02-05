@@ -19,6 +19,7 @@ void GameManager::_init()
 
 GameManager::GameManager()
 {
+
 }
 
 GameManager::~GameManager()

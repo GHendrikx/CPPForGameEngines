@@ -4,14 +4,21 @@
 #include <Godot.hpp>
 #include <RigidBody.hpp>
 #include <CSGMesh.hpp>
-#include <GameManager.h>
-#include <EntityManager.h>
+#include "GameManager.h"
+#include "EntityManager.h"
+#include<MeshInstance.hpp>
+#include <Position3D.hpp>
+#include <CSGMesh.hpp>
+#include <PhysicsBody.hpp>
+#include <KinematicBody.hpp>
+#include "Player.h"
+
 namespace godot
 {
 
-    class Entity : public CSGMesh
+    class Entity : public RigidBody
     {
-        GODOT_CLASS(Entity,CSGMesh);
+        GODOT_CLASS(Entity,RigidBody);
 
         public:
             Entity();
@@ -21,12 +28,12 @@ namespace godot
             void _ready();
             void _process(float delta);
             void _set_entity_type(int i);
-            void _on_Entity_body_entered(PhysicsBody* body);
-            EntityManager::Entity_Type type;
-
+           void _on_RigidBody_body_entered(PhysicsBody* node);
 
         private:
-            float speed;
+            float moveSpeed;
+            bool hit = false;
+
     };
 
 }

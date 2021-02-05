@@ -5,14 +5,13 @@ using namespace godot;
 void InputManager::_init()
 {
 }
+
+//Getting al the inputs and assign it to the actions
 void InputManager::_process(float delta)
 {
-    Input *input = Input::get_singleton();
+   Input *input = Input::get_singleton();
    if (input->is_action_pressed("ui_right"))
-   {
       GameManager::player->_rotate(1);
-      Godot::print("Right");
-   }
    if (input->is_action_pressed("ui_left"))
       GameManager::player->_rotate(-1);
 

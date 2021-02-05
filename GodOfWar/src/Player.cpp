@@ -17,7 +17,6 @@ void Player::_process(float delta)
 
 void Player::_rotate(float degrees)
 {
-//    Godot::print("Rotate");
     //making the rotation vector.
     Vector3 rotation = Vector3(get_rotation_degrees().x, get_rotation_degrees().y - degrees * speed,
                                get_rotation_degrees().z);
@@ -42,6 +41,7 @@ void Player::_attack(bool active)
         GameManager::entitymanager->_search_spawn_positions();
         Player::initializeSpawnPositions = true;
     }
+
     if (active)
     {
         if (!Player::shieldActive)
@@ -78,15 +78,13 @@ void Player::_defend(bool active)
     }
 }
 
-void Player::_on_Player_body_entered(PhysicsBody *body)
-{
-    if (Player::shieldActive)
+void Player::hit(){
+    Godot::print("Hit");
+   Player::hp--;
+
+    if(Player::hp == 0)
     {
-        return;
-    }
-    hp--;
-    if (hp == 0)
-    {
-        //Game Over
+        //game over
+
     }
 }
