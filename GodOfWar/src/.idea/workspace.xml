@@ -39,10 +39,35 @@
   <component name="ClangdSettings">
     <option name="formatViaClangd" value="false" />
   </component>
+  <component name="ExternalProjectsData">
+    <projectState path="$PROJECT_DIR$">
+      <ProjectState />
+    </projectState>
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
   </component>
   <component name="MakefileLocalSettings">
+    <option name="availableProjects">
+      <map>
+        <entry>
+          <key>
+            <ExternalProjectPojo>
+              <option name="name" value="src" />
+              <option name="path" value="$PROJECT_DIR$" />
+            </ExternalProjectPojo>
+          </key>
+          <value>
+            <list>
+              <ExternalProjectPojo>
+                <option name="name" value="src" />
+                <option name="path" value="D:\Users\Geoffrey\CPPForGameEngines\GodOfWar\src" />
+              </ExternalProjectPojo>
+            </list>
+          </value>
+        </entry>
+      </map>
+    </option>
     <option name="projectSyncType">
       <map>
         <entry key="$PROJECT_DIR$" value="RE_IMPORT" />
@@ -71,9 +96,9 @@
     </option>
   </component>
   <component name="RunManager">
-    <configuration default="true" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" PASS_PARENT_ENVS_2="true">
+    <configuration default="true" type="GradleAppRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" PASS_PARENT_ENVS_2="true">
       <method v="2">
-        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+        <option name="com.jetbrains.cidr.cpp.gradle.execution.GradleNativeBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
       </method>
     </configuration>
   </component>
@@ -96,7 +121,8 @@
       <workItem from="1602663609049" duration="2235000" />
       <workItem from="1612273508087" duration="699000" />
       <workItem from="1612446878155" duration="1924000" />
-      <workItem from="1612529470418" duration="8316000" />
+      <workItem from="1612529470418" duration="11694000" />
+      <workItem from="1612709207018" duration="756000" />
     </task>
     <servers />
   </component>
@@ -140,13 +166,17 @@
       <screen x="0" y="0" width="1536" height="824" />
     </state>
     <state x="93" y="93" width="1350" height="638" key="dock-window-1/0.0.1536.824@0.0.1536.824" timestamp="1612447190230" />
-    <state x="325" y="316" width="886" height="208" key="makefile.clean.confirm.dialog" timestamp="1612529492193">
+    <state x="325" y="316" width="886" height="208" key="makefile.clean.confirm.dialog" timestamp="1612709241511">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="325" y="316" width="886" height="208" key="makefile.clean.confirm.dialog/0.0.1536.824@0.0.1536.824" timestamp="1612529492193" />
-    <state x="431" y="145" width="672" height="678" key="search.everywhere.popup" timestamp="1612535270643">
+    <state x="325" y="316" width="886" height="208" key="makefile.clean.confirm.dialog/0.0.1536.824@0.0.1536.824" timestamp="1612709241511" />
+    <state x="425" y="189" width="672" height="677" key="run.anything.popup" timestamp="1612708632801">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="431" y="145" width="672" height="678" key="search.everywhere.popup/0.0.1536.824@0.0.1536.824" timestamp="1612535270643" />
+    <state x="425" y="189" width="672" height="677" key="run.anything.popup/0.0.1536.824@0.0.1536.824" timestamp="1612708632801" />
+    <state x="431" y="145" width="672" height="678" key="search.everywhere.popup" timestamp="1612708281086">
+      <screen x="0" y="0" width="1536" height="824" />
+    </state>
+    <state x="431" y="145" width="672" height="678" key="search.everywhere.popup/0.0.1536.824@0.0.1536.824" timestamp="1612708281086" />
   </component>
 </project>

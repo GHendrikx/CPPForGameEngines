@@ -29,6 +29,7 @@ namespace godot
         void _ready();
         bool attack;
         bool visible;
+        bool hit;
         //void _shootRay();
         void _process();
         void _on_CollisionShape_visibility_changed(Variant);

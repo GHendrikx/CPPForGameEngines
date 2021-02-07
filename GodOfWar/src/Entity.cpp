@@ -32,7 +32,13 @@ void Entity::_on_RigidBody_body_entered(PhysicsBody *body) {
     if (Entity::hit)
         return;
 
+    if(body->get_name() == "Sword") return;
+    if(body->get_name() == "Player")
+    {
+        Godot::print("player");
+        GameManager::player->hit();
+    }
+
     Entity::hit = true;
-    GameManager::player->hit();
     hide();
 }

@@ -28,7 +28,7 @@ transform = Transform( -1.62921e-07, 0, 1, 0, 1, 0, -1, 0, -1.62921e-07, 0, 0, -
 transform = Transform( -3, 0, -8.69354e-05, 0, 3, 0, 0.000260806, 0, -1, 0, 0, -2.58918 )
 visible = false
 
-[node name="RigidBody" type="RigidBody" parent="Player"]
+[node name="Player" type="RigidBody" parent="Player"]
 
-[node name="CollisionShape" type="CollisionShape" parent="Player/RigidBody"]
+[node name="CollisionShape" type="CollisionShape" parent="Player/Player"]
 shape = SubResource( 2 )

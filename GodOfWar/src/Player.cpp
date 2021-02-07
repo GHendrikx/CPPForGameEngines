@@ -79,8 +79,7 @@ void Player::_defend(bool active)
 }
 
 void Player::hit(){
-    Godot::print("Hit");
-   Player::hp--;
+    Player::hp--;
 
     if(Player::hp == 0)
     {

@@ -14,11 +14,16 @@ void Attack::_register_methods()
 
 void Attack::_init() {
     GameManager::player->attack = this;
-    Attack::visible = false;
+    Attack::visible = true;
+    Attack::hit = false;
 }
 
 void Attack::_on_CollisionShape_visibility_changed(Variant) {
     Attack::visible = !Attack::visible;
+    if(Attack::visible)
+        Godot::print("true");
+    if(!Attack::visible)
+        Godot::print("false");
 }
 void Attack::_ready()
 {
@@ -26,23 +31,19 @@ void Attack::_ready()
 
 void Attack::_process()
 {
-    if(is_visible())
-    {
-        //Ref<KinematicCollision> info = move_and_collide(Vector3(0, 0, 0));
-//
-//        if (info != NULL) {
-//
-//        }
-    }
+
 }
 
 void Attack::_on_RigidBody_body_entered(PhysicsBody *body){
-    if(is_visible())
-    {
 
-        Godot::print("on rigidbody body entered" + Attack::visible);
+    if(!Attack::visible) return;
+
+    if(!hit)
+    {
+        body->get_base_script
+        hit = true;
+        body->set_physics_process(false);
         body->hide();
+        Godot::print("Attack");
     }
-    else
-        Godot::print("isnt visible");
 }
